@@ -19,7 +19,7 @@ class Page(models.Model):
     update = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __unicode__(self):
-        return self.title
+        return str(self.title)
 
 
 class PageTranslation(models.Model):

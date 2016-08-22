@@ -9,7 +9,7 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ['title']
     list_filter = ['title', 'timestamp']
     list_display = ['title', 'description', 'timestamp']
-    list_editable = ['title', 'description']
+    list_editable = ['description']
     readonly_fields = ['timestamp']
 
     class Meta:

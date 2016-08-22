@@ -41,6 +41,8 @@ INSTALLED_APPS = (
     'posts',
     'pages',
     'languages',
+    'media',
+    'redactor'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -102,8 +104,21 @@ USE_L10N = True
 
 USE_TZ = True
 
+_PATH = os.path.abspath(os.path.dirname(__file__))
 
+MEDIA_ROOT = os.path.join(_PATH, 'files', 'media')
+MEDIA_URL = '/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-
+STATIC_ROOT = os.path.join(_PATH, 'files', 'static')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(_PATH, 'static'),
+)
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+

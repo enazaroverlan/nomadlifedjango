@@ -5,8 +5,8 @@ from .models import Post
 # Create your views here.
 
 
-def PostView(request):
-    posts = Post.objects.all()
-    context = {'posts': posts}
-    template = 'Posts/post_home.html'
-    return render(request, template, context)
+# def postView(request):
+#     posts = Post.objects.all()
+#     context = {'posts': posts}
+#     template = 'Posts/post_home.html'
+#     return render(request, template, context)
