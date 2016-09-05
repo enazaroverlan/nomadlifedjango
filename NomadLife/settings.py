@@ -42,7 +42,8 @@ INSTALLED_APPS = (
     'pages',
     'languages',
     'media',
-    'redactor'
+    'redactor',
+    'akoikelov.djazz'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -113,7 +114,7 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(_PATH, 'files', 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(_PATH, 'static'),
+    os.path.join(BASE_DIR, 'Static'),
 )
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',

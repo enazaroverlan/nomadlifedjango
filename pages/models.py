@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
+from redactor.fields import RedactorField
 
 
 class Page(models.Model):
@@ -14,7 +15,7 @@ class Page(models.Model):
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     isArticle = models.BooleanField(default=False)
-    article = models.TextField()
+    content = RedactorField(verbose_name='Контент')
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     update = models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -31,7 +32,7 @@ class PageTranslation(models.Model):
     translation = models.ForeignKey('languages.Language')
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
-    article = models.TextField()
+    article = RedactorField(verbose_name='Перевод статьи')
 
     def __unicode__(self):
         return 'Перевод для страницы: ' + self.page.title + ', Язык: ' + self.translation.name
